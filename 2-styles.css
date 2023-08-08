@@ -1,0 +1,77 @@
+/* .toggle {
+  border: 1px solid red;
+} */
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* hide input */
+.toggle-cb {
+  display: none;
+}
+
+/* Toggle default styles */
+.toggle-label {
+  border: 2px solid #c5ccd9;
+  border-radius: 30px;
+  background-color: #ebebee;
+  color: #c5ccd9;
+  display: block;
+  height: 50px;
+  position: relative;
+  width: 150px;
+}
+
+.toggle-inner {
+  height: 100%;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  font-family: monospace;
+  font-weight: bold;
+}
+
+.toggle-inner::after {
+  content: 'No';
+  width: 90%;
+  padding-right: 2rem;
+  text-align: right;
+}
+
+.toggle-switch {
+  background-color: #ffffff;
+  border-radius: 50%;
+  border: 2px solid #c5ccd9;
+  height: 100%;
+  width: 50px;
+  position: absolute;
+  top: 0;
+  transform: scale(1.2);
+  transition: position 0.5s;
+}
+
+/* Change toggle bg color on check */
+.toggle-cb:checked ~ .toggle-label {
+  background-color: #e1013c;
+  color: #ffffff;
+}
+
+/* Move switch to right when input is checked */
+.toggle-cb:checked ~ .toggle-label .toggle-switch {
+  right: 0;
+}
+
+.toggle-cb:checked ~ .toggle-label .toggle-inner {
+  color: #ffffff;
+}
+
+/* Set toggle text to "yes" when check */
+.toggle-cb:checked ~ .toggle-label .toggle-inner::after {
+  content: 'Yes';
+  padding-left: 1.5rem;
+  text-align: left;
+}
