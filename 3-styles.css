@@ -1,0 +1,256 @@
+body {
+  display: flex;
+  justify-content: center;
+  margin-top: 5rem;
+  height: 100vh;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.menu-open {
+  display: none;
+}
+
+.menu-open-button {
+  background-color: #e1013c;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  height: 100px;
+  position: relative;
+  width: 100px;
+  transition: transform 0.5s;
+}
+
+.menu-open-button:hover {
+  transform: scale(1.1);
+}
+
+.menu-open-button .menu-line {
+  position: absolute;
+  width: 30%;
+  border: 2px solid #ffffff;
+}
+
+.menu-line-1 {
+  top: 2rem;
+}
+
+.menu-line-3 {
+  top: 4rem;
+}
+
+/**
+ * ----------------------------------------
+ * animation slide-out-top
+ * ----------------------------------------
+ */
+
+ @keyframes slide-out-menu-item-1 {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+}
+
+ @keyframes slide-out-menu-item-2 {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+}
+
+ @keyframes slide-out-menu-item-3 {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-150px);
+    opacity: 0;
+  }
+}
+
+ @keyframes slide-out-menu-item-4 {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-200px);
+    opacity: 0;
+  }
+}
+
+ @keyframes slide-out-menu-item-5 {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-250px);
+    opacity: 0;
+  }
+}
+
+.menu-item {
+  background-color: #e1013c;
+  border: 1px solid #e1013c;
+  border-radius: 50%;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 50px;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.menu-item:hover {
+  color: #e1013c;
+  background-color: #ffffff;
+}
+
+/* Apply animations to menu item when closed */
+
+.menu-item:nth-of-type(1) {
+  animation: slide-out-menu-item-1 0.3s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+
+.menu-item:nth-of-type(2) {
+  animation: slide-out-menu-item-2 0.3s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+
+.menu-item:nth-of-type(3) {
+  animation: slide-out-menu-item-3 0.3s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+
+.menu-item:nth-of-type(4) {
+  animation: slide-out-menu-item-4 0.3s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+
+.menu-item:nth-of-type(5) {
+  animation: slide-out-menu-item-5 0.3s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+
+/* =======================
+
+     Menu open styles
+
+==========================
+ */
+.menu-open:checked ~ .menu-open-button {
+  transform: scale(0.5);
+}
+
+/* Remove 3rd line when menu is open */
+.menu-open:checked ~ .menu-open-button .menu-line-3 {
+  display: none;
+}
+
+/* Create the X-sign when menu is open */
+.menu-open:checked ~ .menu-open-button .menu-line-1 {
+  top: 3rem;
+  transform: rotate(50deg);
+}
+
+.menu-open:checked ~ .menu-open-button .menu-line-2 {
+  transform: rotate(-50deg);
+}
+
+
+/**
+ * ----------------------------------------
+ * animation slide-in-top
+ * ----------------------------------------
+ */
+
+@keyframes slide-in-top-menu-item-1 {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-top-menu-item-2 {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-top-menu-item-3 {
+  0% {
+    transform: translateY(-150px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-top-menu-item-4 {
+  0% {
+    transform: translateY(-200px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-top-menu-item-5 {
+  0% {
+    transform: translateY(-250px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.menu-open:checked ~ .menu-item:nth-of-type(1) {
+  animation: slide-in-top-menu-item-1 0.5s ease-in forwards;
+}
+
+.menu-open:checked ~ .menu-item:nth-of-type(2) {
+  animation: slide-in-top-menu-item-2 0.5s ease-in forwards;
+}
+
+.menu-open:checked ~ .menu-item:nth-of-type(3) {
+  animation: slide-in-top-menu-item-3 0.5s ease-in forwards;
+}
+
+.menu-open:checked ~ .menu-item:nth-of-type(4) {
+  animation: slide-in-top-menu-item-4 0.5s ease-in forwards;
+}
+
+.menu-open:checked ~ .menu-item:nth-of-type(5) {
+  animation: slide-in-top-menu-item-5 0.5s ease-in forwards;
+}
