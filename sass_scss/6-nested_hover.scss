@@ -1,6 +1,9 @@
 /* Sass nested button hover declarations */
+$txt-color: #FF0000;
+$txt-hov-color: #00FF00;
+
 button {
-  color: #FF0000;
-  &:hover { color: #00FF00; }
+  color: $txt-color;
+  &:hover { color: $txt-hov-color; }
 }
 
