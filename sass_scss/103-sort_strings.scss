@@ -1,0 +1,26 @@
+/* Sass sorting a list */
+@import '103-sort_list.scss';
+
+$sortedList: ();
+
+@while length($list_to_sort) > 0 {
+  $minItem: null;
+  $minIndex: null;
+
+  @for $i from 1 through length($list_to_sort) {
+    $item: nth($list_to_sort, $i);
+
+    @if $minItem == null or $item < $minItem {
+      $minItem: $item;
+      $minIndex: $i;
+    }
+  }
+
+  $sortedList: append($sortedList, $minItem);
+  $list_to_sort: join(nth($list_to_sort, 1, $minIndex - 1), nth($$list_to_sort, $minIndex + 1));
+}
+
+@each $item in $sortedList {
+  @debug $item;
+}
+
