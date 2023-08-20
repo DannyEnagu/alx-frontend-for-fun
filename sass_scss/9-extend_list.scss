@@ -1,0 +1,20 @@
+/* Working with Sass Extend/Inheritance */
+
+%shared-font-size {
+  font-size: 12px;
+}
+
+.info {
+  @extend %shared-font-size;
+}
+
+.success {
+  color: #00FF00;
+  @extend %shared-font-size;
+}
+
+.warning {
+  color: #FF0000;
+  @extend %shared-font-size;
+}
+
