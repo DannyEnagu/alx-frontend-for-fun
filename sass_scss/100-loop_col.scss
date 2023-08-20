@@ -1,0 +1,8 @@
+/* Creating columns and operators using @for rule */
+
+@for $i from 1 through 4 {
+  .col-#{$i} {
+    width: (100/$i) * 1%;
+  } 
+}
+
